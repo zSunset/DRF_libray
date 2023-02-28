@@ -9,4 +9,4 @@ class AuthorModelSerializer(HyperlinkedModelSerializer):
 class CustomUserModelSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = CustomUser
-        field = '__all__'
+        fields = '__all__'
