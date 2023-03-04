@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from .models import Author, CustomUser
-from .serializers import AuthorModelSerializer
+from .serializers import AuthorModelSerializer, CustomUserModelSerializer
 
 class AuthorModelViewSet(ModelViewSet):
     queryset = Author.objects.all()
@@ -8,4 +8,4 @@ class AuthorModelViewSet(ModelViewSet):
 
 class CustomUserModelViewSet(ModelViewSet):
     queryset = CustomUser.objects.all()
-    serializer_class = AuthorModelSerializer
+    serializer_class = CustomUserModelSerializer
