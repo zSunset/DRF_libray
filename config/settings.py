@@ -38,9 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'django_filters',
     'authors',
     'corsheaders',
     'TODO',
+    'safedelete',
+    # 'crispy_forms',
     
 ]
 
@@ -57,8 +60,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'config.urls'
 
-CORS_ALLOWED_ORIGINS = ['http://localhost:3002',
-                        'http://10.0.2.15:3002',]
+CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
+                        'http://10.0.2.15:3000',]
 
 TEMPLATES = [
     {
@@ -132,3 +135,13 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'authors.CustomUser'
+
+SAFE_DELETE_INTERPRET_UNDELETED_OBJECTS_AS_CREATED = True
+
+# CRISPY_TEMPLATE_PACK = 'uni_form'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
