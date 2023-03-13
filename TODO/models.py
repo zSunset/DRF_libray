@@ -1,5 +1,7 @@
 from django.db import models
 from authors.models import CustomUser
+from safedelete.models import SafeDeleteModel
+from safedelete import SOFT_DELETE_CASCADE
 
 class Project(models.Model):
     name = models.CharField(max_length=64, blank=False)
@@ -9,7 +11,8 @@ class Project(models.Model):
     def __str__(self) -> str:
         return self.name
 
-class ToDo_notes(models.Model):
+class ToDo_notes(SafeDeleteModel, models.Model):
+    _safedelete_policy = SOFT_DELETE_CASCADE
     header = models.CharField(max_length=64, blank=False)
     body = models.TextField(blank=False)
     create = models.DateTimeField(auto_now_add=True)
