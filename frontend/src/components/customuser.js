@@ -7,10 +7,10 @@ const CustomUserItem = ({custom_user}) => {
                 {custom_user.username}
             </td>
             <td>
-                {custom_user.firstname}
+                {custom_user.first_name}
             </td>
             <td>
-                {custom_user.lastname}
+                {custom_user.last_name}
             </td>
             <td>
                 {custom_user.email}
@@ -26,10 +26,10 @@ const CustomUserList = ({custom_user}) => {
                 username
             </th>
             <th>
-                firstname
+                first_name
             </th>
             <th>
-                lastname
+                last_name
             </th>
             <th>
                 email

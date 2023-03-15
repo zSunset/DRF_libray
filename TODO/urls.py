@@ -6,4 +6,6 @@ from rest_framework.routers import DefaultRouter
 app_name = TodoConfig.name
 
 
-urlpatterns = []
+urlpatterns = [
+    path('views/api-view', views.ProjectModelViewSet.as_view(), namespace='vapi')
+]

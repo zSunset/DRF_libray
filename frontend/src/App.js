@@ -13,7 +13,7 @@ class  App extends React.Component {
     }
 
     componentDidMount() {
-      axios.get('http://127.0.0.1:8000/api/appuser/')
+      axios.get('http://127.0.0.1:8000/appuser/')
           .then(response => {
               const custom_user = response.data
                   this.setState(
