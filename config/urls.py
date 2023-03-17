@@ -17,5 +17,6 @@ urlpatterns = [
     path('api-auth', include('rest_framework.urls')),
     path('views/api-view', views.ProjectModelViewSet.as_view({'get': 'list'})),
     path('', include(router.urls)),
+
     
 ]
