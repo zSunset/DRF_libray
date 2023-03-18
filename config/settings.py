@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'TODO',
     'safedelete',
+    'rest_framework.authtoken',
     # 'crispy_forms',
     
 ]
@@ -144,4 +145,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
