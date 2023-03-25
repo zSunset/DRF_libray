@@ -1,3 +1,5 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Project, ToDo_notes
+admin.site.register(Project)
+admin.site.register(ToDo_notes)
