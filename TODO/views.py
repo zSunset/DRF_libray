@@ -1,17 +1,19 @@
-from rest_framework.generics import ListAPIView, CreateAPIView
-from rest_framework import generics, permissions
-from rest_framework.serializers import HyperlinkedModelSerializer
+from rest_framework import  permissions, generics
 from .models import ToDo_notes, Project, CustomUser
 from .serializers import CustomUserSerializer, ProjectSerializer, ToDo_notesSerializer
 from rest_framework.viewsets import ModelViewSet
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
 from rest_framework import mixins
 from rest_framework import viewsets
 from rest_framework.pagination import LimitOffsetPagination
 from django_filters import rest_framework as filters
-from rest_framework import generics
+from django.db import IntegrityError
+from django.contrib.auth.models import User
+from authors.models import CustomUser
+from rest_framework.parsers import JSONParser
+from rest_framework.authtoken.models import Token
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.renderers import JSONRenderer, BrowsableAPIRenderer
 
 # class CustomUserLimitOffsetPagination(LimitOffsetPagination):
 #     default_limit = 100
