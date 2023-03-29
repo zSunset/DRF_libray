@@ -44,7 +44,9 @@ INSTALLED_APPS = [
     'TODO',
     'safedelete',
     'rest_framework.authtoken',
-    # 'crispy_forms',
+    # 'djoser',
+    'crispy_forms',
+    
     
 ]
 
@@ -62,7 +64,10 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'config.urls'
 
 CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
-                        'http://10.0.2.15:3000',]
+                        'http://10.0.2.15:3000',
+                        'http://127.0.0.1:3000',
+                        'http://127.0.0.1:8000',
+                        ]
 
 TEMPLATES = [
     {
@@ -139,7 +144,7 @@ AUTH_USER_MODEL = 'authors.CustomUser'
 
 SAFE_DELETE_INTERPRET_UNDELETED_OBJECTS_AS_CREATED = True
 
-# CRISPY_TEMPLATE_PACK = 'uni_form'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
@@ -147,17 +152,24 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        'rest_framework.permissions.IsAuthenticated'
     ],
     
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
-]
+],
 
 }
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
+# AUTHENTICATION_BACKENDS = [
+#     'django.contrib.auth.backends.ModelBackend',
     
-]
+# ]
 
+# DJOSER = {
+#     'PASSWORD_RESET_CONFIRM_URL': '#/password/reset/confirm/{uid}/{token}',
+#     'USERNAME_RESET_CONFIRM_URL': '#/username/reset/confirm/{uid}/{token}',
+#     'ACTIVATION_URL': '#/activate/{uid}/{token}',
+#     'SEND_ACTIVATION_EMAIL': True,
+#     'SERIALIZERS': {},
+# }
