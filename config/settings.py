@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'safedelete',
     'rest_framework.authtoken',
     # 'djoser',
-    'crispy_forms',
+    # 'crispy_forms',
     
     
 ]
@@ -144,7 +144,7 @@ AUTH_USER_MODEL = 'authors.CustomUser'
 
 SAFE_DELETE_INTERPRET_UNDELETED_OBJECTS_AS_CREATED = True
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': (
@@ -152,7 +152,7 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated'
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     ],
     
     'DEFAULT_AUTHENTICATION_CLASSES': [
