@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'TODO',
     'safedelete',
     'rest_framework.authtoken',
+    'drf_yasg',
     # 'djoser',
     # 'crispy_forms',
     
