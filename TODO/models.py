@@ -6,7 +6,7 @@ from safedelete import SOFT_DELETE_CASCADE
 class Project(models.Model):
     name = models.CharField(max_length=64, blank=False)
     link_to_repository = models.URLField(max_length=64, blank=True)
-    user_set = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user_set = models.ManyToManyField(CustomUser)
     
     def __str__(self) -> str:
         return self.name
