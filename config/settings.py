@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django',
     'rest_framework',
     'django_filters',
     'authors',
@@ -153,13 +154,17 @@ REST_FRAMEWORK = {
     ),
 
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+        'rest_framework.permissions.AllowAny'
     ],
     
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
 ],
 
+}
+
+GRAPHENE = {
+    "SCHEMA": "TODO.schema.schema"
 }
 
 # AUTHENTICATION_BACKENDS = [

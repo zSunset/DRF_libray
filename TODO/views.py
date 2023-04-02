@@ -36,7 +36,7 @@ class ProjectModelViewSet(ModelViewSet):
     serializer_class = ProjectSerializer
     # pagination_class = ProjectLimitOffsetPagination
     def get_queryset(self):
-        return Project.objects.filter(name__contains='JS')
+        return Project.objects.filter(name__contains='')
 
 
 # class ToDo_notesLimitOffsetPagination(LimitOffsetPagination):
